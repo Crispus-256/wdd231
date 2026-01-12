@@ -30,8 +30,24 @@ function displayCourses(filteredCourses) {
 
 // Filter Buttons
 document.getElementById('all-courses').addEventListener('click', () => displayCourses(courses));
-document.getElementById('wdd-courses').addEventListener('click', () => displayCourses(courses.filter(course => course.name.startsWith('WDD'))));
-document.getElementById('cse-courses').addEventListener('click', () => displayCourses(courses.filter(course => course.name.startsWith('CSE'))));
+
+// Add event listeners for WDD courses
+document.querySelectorAll('.wdd-course').forEach(button => {
+  button.addEventListener('click', () => {
+    const courseName = button.dataset.course;
+    const filteredCourses = courses.filter(course => course.name === courseName);
+    displayCourses(filteredCourses);
+  });
+});
+
+// Add event listeners for CSE courses
+document.querySelectorAll('.cse-course').forEach(button => {
+  button.addEventListener('click', () => {
+    const courseName = button.dataset.course;
+    const filteredCourses = courses.filter(course => course.name === courseName);
+    displayCourses(filteredCourses);
+  });
+});
 
 // Initial Display
 displayCourses(courses);
