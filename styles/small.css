@@ -47,7 +47,7 @@ header {
 
 .navigation ul li a {
   text-decoration: none;
-  color: #007BFF;
+  color: #1202fa;
   font-weight: bold;
 }
 
@@ -60,7 +60,7 @@ header {
 
 .course-buttons button {
   padding: 0.5rem;
-  background-color: #007BFF;
+  background-color: #319bdc;
   color: white;
   border: none;
   cursor: pointer;
@@ -68,7 +68,7 @@ header {
 }
 
 .course-buttons button:hover {
-  background-color: #0056b3;
+  background-color: #304254;
 }
 
 .social-links {
