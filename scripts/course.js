@@ -1,8 +1,11 @@
 // Course Data
 const courses = [
-  { name: "WDD131", credits: 3, completed: true },
-  { name: "CSE121", credits: 4, completed: false },
-  { name: "WDD231", credits: 3, completed: true },
+  { name: "CSE110", credits: 2, completed: true },
+  { name: "WDD130", credits: 2, completed: true },
+  { name: "CSE111", credits: 2, completed: true },
+  { name: "WDD131", credits: 2, completed: true },
+  { name: "CSE210", credits: 2, completed: true },
+  { name: "WDD231", credits: 2, completed: false },
 ];
 
 // Display Courses

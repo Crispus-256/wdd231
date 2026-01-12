@@ -15,16 +15,52 @@
 
   main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 1rem;
   }
 
-  .about-photo-container {
+  .courses {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .course-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .photo-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    text-align: center;
   }
+
+
+.social-links {
+  display: flex;
+  gap: 15px; 
+  justify-content: center; 
+  margin-top: 20px;
+} 
+
+.social-links a {
+  text-decoration: none;
+  color: #333; 
+  transition: color 0.3s ease;
+}
+
+
+.social-links a:hover {
+  color: #0073b1;
+
+
+.social-icons svg {
+  width: 24px;
+  height: 24px;
+}
 
   footer {
     display: flex;
@@ -32,4 +68,5 @@
     align-items: center;
     padding: 1rem;
   }
+}
 }
