@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Nuweamanya Crispus - A passionate web developer specializing in frontend technologies like HTML, CSS, and JavaScript.">
+  <meta name="author" content="Nuweamanya Crispus">
+  <title>Nuweamanya Crispus | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+
+  <!-- Small Screen CSS -->
+  <link rel="stylesheet" href="styles/small.css">
+
+  <!-- Larger Screen CSS -->
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- JavaScript Files with defer -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
 </head>
 <body>
-    
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <img src="images/profile.png" alt="Profile Picture" width="48" height="48">
+      <span class="name">Nuweamanya Crispus</span>
+      <button id="nav-button" class="hamburger" aria-label="navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav id="nav-bar" class="navigation">
+  <ul>
+    <li class="current"><a href="#">Home</a></li>
+    <li><a href="chamber.html">Chamber</a></li>
+    <li><a href="final.html">Final</a></li>
+  </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+  <!-- Two-column layout: About + Photo -->
+  <div class="about-photo-container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! My name is <strong>Nuweamanya Crispus</strong>, and I am a passionate web developer currently pursuing my education at BYU Pathway Worldwide. I specialize in frontend technologies such as HTML, CSS, and JavaScript, and I am thrilled to be enrolled in the WDD 231: Web Frontend Development course.
+      </p>
+      <p>
+        As a tech enthusiast, I love creating intuitive, user-friendly websites that not only look great but also function seamlessly. This course has helped me sharpen my skills in responsive design, accessibility, and modern web development practices. Outside of my studies, I enjoy exploring new technologies, solving coding challenges, and staying up-to-date with the latest trends in the tech world.
+      </p>
+      <p>
+        Through my journey at BYU Pathway and beyond, I hope to contribute meaningfully to the field of web development and create impactful digital experiences that make a difference. Thank you for visiting my portfolio—I look forward to connecting with you!
+      </p>
+    </section>
+
+    <section id="student-photo">
+      <h2>Student Photo</h2>
+      <img src="images/profile.png" alt="Nuweamanya Crispus" width="100" height="100">
+      <p>Feel free to reach out via email or social media.</p>
+    </section>
+  </div>
+
+  <!-- Courses Section Below -->
+  <section id="courses">
+    <h2>Web Certificate Courses</h2>
+    <div id="course-list"></div>
+    <div class="course-buttons">
+      <button id="all-courses">All</button>
+      <button id="wdd-courses">WDD</button>
+      <button id="cse-courses">CSE</button>
+    </div>
+    <p>The total credits for courses listed above is <span id="total-credits">0</span></p>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>&copy; <span id="currentyear"></span> Nuweamanya Crispus | Kenya</div>
+    <div>Last Modified: <span id="lastModified"></span></div>
+  </footer>
 </body>
 </html>
