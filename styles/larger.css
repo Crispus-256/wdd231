@@ -26,9 +26,10 @@
   }
 
   .course-buttons {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    text-align: center;
   }
 
   .photo-container {
@@ -38,29 +39,29 @@
     text-align: center;
   }
 
+  .social-links {
+    display: flex;
+    gap: 15px; 
+    justify-content: center; 
+    margin-top: 20px;
+  } 
 
-.social-links {
-  display: flex;
-  gap: 15px; 
-  justify-content: center; 
-  margin-top: 20px;
-} 
-
-.social-links a {
-  text-decoration: none;
-  color: #333; 
-  transition: color 0.3s ease;
-}
-
-
-.social-links a:hover {
-  color: #0073b1;
+  .social-links a {
+    text-decoration: none;
+    color: #333; 
+    transition: color 0.3s ease;
+  }
 
 
-.social-links svg {
-  width: 24px;
-  height: 24px;
-}
+  .social-links a:hover {
+    color: #0073b1;
+  }
+
+
+  .social-links svg {
+    width: 24px;
+    height: 24px;
+  }
 
   footer {
     display: flex;
@@ -68,5 +69,4 @@
     align-items: center;
     padding: 1rem;
   }
-}
 }
