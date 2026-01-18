@@ -1,7 +1,7 @@
 [
   {
     "name": "ABC Bakery",
-    "address": "123 Main St, Your City",
+    "address": "123 Main St, Nairobi",
     "phone": "555-1234",
     "website": "https://abcbakery.com",
     "image": "bakery.png",
@@ -9,7 +9,7 @@
   },
   {
     "name": "XYZ Tech",
-    "address": "456 Tech Ave, Your City",
+    "address": "456 Tech Ave, Nairobi",
     "phone": "555-5678",
     "website": "https://xyztech.com",
     "image": "xyz_tech.png",
@@ -17,7 +17,7 @@
   },
   {
     "name": "Green Grocer",
-    "address": "789 Market St, Your City",
+    "address": "789 Market St, Nairobi",
     "phone": "555-9012",
     "website": "https://greengrocer.com",
     "image": "green_grocer.png",
@@ -25,7 +25,7 @@
   },
   {
     "name": "Fitness First",
-    "address": "321 Workout Blvd, Your City",
+    "address": "321 Workout Blvd, Nairobi",
     "phone": "555-3456",
     "website": "https://fitnessfirst.com",
     "image": "fittness_first.png",
@@ -33,7 +33,7 @@
   },
   {
     "name": "Elegant Events",
-    "address": "654 Celebration Rd, Your City",
+    "address": "654 Celebration Rd, Nairobi",
     "phone": "555-7890",
     "website": "https://elegantevents.com",
     "image": "elegant_events.png",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Tech Solutions",
-    "address": "987 Innovation Dr, Your City",
+    "address": "987 Innovation Dr, Nairobi",
     "phone": "555-2345",
     "website": "https://techsolutions.com",
     "image": "tech_solutions.png",
@@ -49,7 +49,7 @@
   },
   {
     "name": "Healthy Living",
-    "address": "159 Wellness St, Your City",
+    "address": "159 Wellness St, Nairobi",
     "phone": "555-6789",
     "website": "https://healthyliving.com",
     "image": "healthy_living.png",

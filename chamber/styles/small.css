@@ -35,4 +35,11 @@ nav ul li {
   max-width: 100%;
   height: auto;
 }
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #f1f1f1;
+  margin-top: 2rem;
+}
 }
