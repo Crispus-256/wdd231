@@ -13,7 +13,7 @@ const loadData = async () => {
 // Display members on the page
 const displayMembers = (members) => {
   const memberList = document.getElementById('member-list');
-  memberList.innerHTML = '';
+  memberList.innerHTML = ''; // Clear previous content
   members.forEach(member => {
     const card = document.createElement('div');
     card.classList.add('member-card');
@@ -22,7 +22,7 @@ const displayMembers = (members) => {
       <h3>${member.name}</h3>
       <p>${member.address}</p>
       <p>${member.phone}</p>
-      <a href="${member.website}">Visit Website</a>
+      <a href="${member.website}" target="_blank">Visit Website</a>
     `;
     memberList.appendChild(card);
   });
@@ -31,7 +31,18 @@ const displayMembers = (members) => {
 // Toggle between grid and list views
 document.getElementById('toggle-view').addEventListener('click', () => {
   const memberList = document.getElementById('member-list');
-  memberList.classList.toggle('list-view');
+  const toggleButton = document.getElementById('toggle-view');
+
+  // Toggle between grid and list views
+  if (memberList.classList.contains('grid-view')) {
+    memberList.classList.remove('grid-view');
+    memberList.classList.add('list-view');
+    toggleButton.textContent = 'Switch to Grid View';
+  } else {
+    memberList.classList.remove('list-view');
+    memberList.classList.add('grid-view');
+    toggleButton.textContent = 'Switch to List View';
+  }
 });
 
 // Dynamic footer content

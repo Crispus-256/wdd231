@@ -4,7 +4,7 @@
     "address": "123 Main St, Your City",
     "phone": "555-1234",
     "website": "https://abcbakery.com",
-    "image": "bakery.jpg",
+    "image": "bakery.png",
     "membershipLevel": 2
   },
   {
@@ -12,7 +12,7 @@
     "address": "456 Tech Ave, Your City",
     "phone": "555-5678",
     "website": "https://xyztech.com",
-    "image": "tech.jpg",
+    "image": "xyz_tech.png",
     "membershipLevel": 3
   },
   {
@@ -20,7 +20,39 @@
     "address": "789 Market St, Your City",
     "phone": "555-9012",
     "website": "https://greengrocer.com",
-    "image": "grocer.jpg",
+    "image": "green_grocer.png",
     "membershipLevel": 1
+  },
+  {
+    "name": "Fitness First",
+    "address": "321 Workout Blvd, Your City",
+    "phone": "555-3456",
+    "website": "https://fitnessfirst.com",
+    "image": "fittness_first.png",
+    "membershipLevel": 2
+  },
+  {
+    "name": "Elegant Events",
+    "address": "654 Celebration Rd, Your City",
+    "phone": "555-7890",
+    "website": "https://elegantevents.com",
+    "image": "elegant_events.png",
+    "membershipLevel": 3
+  },
+  {
+    "name": "Tech Solutions",
+    "address": "987 Innovation Dr, Your City",
+    "phone": "555-2345",
+    "website": "https://techsolutions.com",
+    "image": "tech_solutions.png",
+    "membershipLevel": 1
+  },
+  {
+    "name": "Healthy Living",
+    "address": "159 Wellness St, Your City",
+    "phone": "555-6789",
+    "website": "https://healthyliving.com",
+    "image": "healthy_living.png",
+    "membershipLevel": 2
   }
 ]
