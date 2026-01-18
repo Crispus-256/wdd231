@@ -1,0 +1,36 @@
+/* Small Screen Styles */
+body {
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+#member-list.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.member-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.member-card img {
+  max-width: 100%;
+  height: auto;
+}

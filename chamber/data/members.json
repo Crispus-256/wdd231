@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ABC Bakery",
+    "address": "123 Main St, Your City",
+    "phone": "555-1234",
+    "website": "https://abcbakery.com",
+    "image": "bakery.jpg",
+    "membershipLevel": 2
+  },
+  {
+    "name": "XYZ Tech",
+    "address": "456 Tech Ave, Your City",
+    "phone": "555-5678",
+    "website": "https://xyztech.com",
+    "image": "tech.jpg",
+    "membershipLevel": 3
+  },
+  {
+    "name": "Green Grocer",
+    "address": "789 Market St, Your City",
+    "phone": "555-9012",
+    "website": "https://greengrocer.com",
+    "image": "grocer.jpg",
+    "membershipLevel": 1
+  }
+]
