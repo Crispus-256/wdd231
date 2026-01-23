@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Tech Solutions",
+    "logo": "images/tech_solutions.png",
+    "phone": "+254 723 456 789",
+    "address": "123 Tech Lane, Nairobi",
+    "website": "https://techsolutions.com",
+    "membership": "Gold"
+  },
+  {
+    "name": "Green Grocer",
+    "logo": "images/green_grocer.png",
+    "phone": "+254 787 654 321",
+    "address": "789 Market St, Nairobi",
+    "website": "https://greengrocer.com",
+    "membership": "Gold"
+  },
+  {
+    "name": "ABC Bakery",
+    "logo": "images/bakery.png",
+    "phone": "+254 712 345 678",
+    "address": "123 Main St, Nairobi",
+    "website": "https://abcbakery.com",
+    "membership": "Gold"
+  }
+]
