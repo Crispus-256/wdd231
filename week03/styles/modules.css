@@ -5,27 +5,30 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  color: #333;
+  min-height: 100vh;
 }
 
 main {
-  padding: 1rem;
-  background-color: #fff;
+  padding: 2rem;
+  background: white;
   color: #333;
   width: fit-content;
-  margin: 1rem auto;
-  border: 1px solid rgb(0 0 0 / 10%);
-  border-radius: 10px;
+  margin: 2rem auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 h1 {
-  font-size: 1.5rem;
-  color: #000;
+  font-size: 1.8rem;
+  color: #0078d4;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #555;
 }
 
@@ -41,11 +44,12 @@ form p {
 }
 
 #enrollment {
-  padding: 1rem 1rem 0 1rem;
-  border: 1px solid rgb(0 0 0 / 10%);
-  border-radius: 10px;
-  background-color: #bed;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: linear-gradient(135deg, #bed, #aec);
   text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 select {
