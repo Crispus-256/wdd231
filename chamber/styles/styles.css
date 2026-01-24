@@ -79,25 +79,31 @@ nav a {
   border-radius: 5px;
 }
 
-.events, .weather, .spotlights {
+.spotlights {
   padding: 1rem;
   margin: 1rem auto;
   max-width: 800px;
   text-align: center;
+} 
+
+.events {
+  background-color: #e3f2fd;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.spotlights .card {
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  display: inline-block;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: white;
+.weather {
+  background-color: #fff3e0;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.spotlights img {
-  max-width: 100%;
-  height: auto;
+#spotlight-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 footer {
@@ -116,5 +122,14 @@ footer {
 
   .hero-content {
     font-size: 1.2rem;
+  }
+
+  #spotlight-cards {
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+
+  #spotlight-cards .card {
+    width: 100%;
   }
 }

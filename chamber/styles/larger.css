@@ -32,6 +32,12 @@
 }
 
 /* Member Card Styles */
+#member-list.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
 .member-card {
   background-color: #f1f1f1;
   padding: 1rem;
