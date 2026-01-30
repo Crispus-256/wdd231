@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the Nairobi Chamber of Commerce to empower your business and grow with the community.">
+  <meta property="og:title" content="Nairobi Chamber of Commerce - Membership Application">
+  <meta property="og:description" content="Apply to join the Nairobi Chamber of Commerce and enjoy exclusive member benefits.">
+  <meta property="og:image" content="https://crispus-256.github.io/wdd231/chamber/images/pexels-ivan-hero.jpg">
+  <meta property="og:url" content="https://crispus-256.github.io/wdd231/chamber/join.html">
+  <meta name="author" content="Crispus Nuweamanya">
+  <title>Nairobi Chamber of Commerce - Join</title>
+  <link rel="icon" href="images/chamber_favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/join.css">
+  <script src="scripts/join.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/chamber_favicon.ico" alt="Nairobi Chamber of Commerce Logo">
+    </div>
+    <nav>
+      <ul id="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h1>Membership Application</h1>
+      <form action="thankyou.html" method="GET">
+        <!-- First Name -->
+        <label for="firstName">
+          First Name:
+          <input type="text" id="firstName" name="firstName" required autocomplete="given-name" title="Enter your first name">
+        </label>
+
+        <!-- Last Name -->
+        <label for="lastName">
+          Last Name:
+          <input type="text" id="lastName" name="lastName" required autocomplete="family-name" title="Enter your last name">
+        </label>
+
+        <!-- Organizational Title -->
+        <label for="orgTitle">
+          Organizational Title:
+          <input type="text" id="orgTitle" name="orgTitle" pattern="[A-Za-z\s\-]{7,}" title="Minimum 7 characters, letters, spaces, and hyphens only" autocomplete="organization-title">
+        </label>
+
+        <!-- Email -->
+        <label for="email">
+          Email Address:
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="example@example.com" title="Enter your email address">
+        </label>
+
+        <!-- Mobile Phone -->
+        <label for="phone">
+          Mobile Phone:
+          <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Enter your mobile phone number">
+        </label>
+
+        <!-- Business/Organization Name -->
+        <label for="businessName">
+          Business/Organization Name:
+          <input type="text" id="businessName" name="businessName" required autocomplete="organization" title="Enter your business or organization name">
+        </label>
+
+        <!-- Membership Level -->
+        <label for="membershipLevel">
+          Membership Level:
+          <select id="membershipLevel" name="membershipLevel" required>
+            <option value="" disabled selected hidden>Select membership level</option>
+            <option value="np">NP Membership (Non-Profit)</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+          </select>
+        </label>
+
+        <!-- Business Description -->
+        <label for="description">
+          Business/Organization Description:
+          <textarea id="description" name="description" rows="5" title="Provide a brief description of your business or organization"></textarea>
+        </label>
+
+        <!-- Timestamp -->
+        <input type="hidden" id="timestamp" name="timestamp">
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+
+    <!-- Membership Level Cards -->
+    <section class="membership-cards">
+      <h2>Membership Levels</h2>
+      <div class="card-container">
+        <div class="card" id="np-card">
+          <h3>NP Membership</h3>
+          <p>No Fee</p>
+          <button data-modal="np-modal" aria-controls="np-modal" aria-haspopup="dialog">Learn More</button>
+        </div>
+        <div class="card" id="bronze-card">
+          <h3>Bronze Membership</h3>
+          <button data-modal="bronze-modal" aria-controls="bronze-modal" aria-haspopup="dialog">Learn More</button>
+        </div>
+        <div class="card" id="silver-card">
+          <h3>Silver Membership</h3>
+          <button data-modal="silver-modal" aria-controls="silver-modal" aria-haspopup="dialog">Learn More</button>
+        </div>
+        <div class="card" id="gold-card">
+          <h3>Gold Membership</h3>
+          <button data-modal="gold-modal" aria-controls="gold-modal" aria-haspopup="dialog">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modals -->
+    <dialog id="np-modal" class="modal" aria-modal="true" aria-labelledby="np-title">
+      <button class="close-modal" type="button" aria-label="Close dialog">❌</button>
+      <h2 id="np-title">NP Membership Benefits</h2>
+      <p>No fee, access to basic networking events.</p>
+    </dialog>
+    <dialog id="bronze-modal" class="modal" aria-modal="true" aria-labelledby="bronze-title">
+      <button class="close-modal" type="button" aria-label="Close dialog">❌</button>
+      <h2 id="bronze-title">Bronze Membership Benefits</h2>
+      <p>Basic training sessions, limited advertising opportunities.</p>
+    </dialog>
+    <dialog id="silver-modal" class="modal" aria-modal="true" aria-labelledby="silver-title">
+      <button class="close-modal" type="button" aria-label="Close dialog">❌</button>
+      <h2 id="silver-title">Silver Membership Benefits</h2>
+      <p>Advanced training, priority event access, moderate advertising.</p>
+    </dialog>
+    <dialog id="gold-modal" class="modal" aria-modal="true" aria-labelledby="gold-title">
+      <button class="close-modal" type="button" aria-label="Close dialog">❌</button>
+      <h2 id="gold-title">Gold Membership Benefits</h2>
+      <p>Premium benefits, top-tier advertising, exclusive events.</p>
+    </dialog>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nairobi Chamber of Commerce | <a href="https://crispus-256.github.io/wdd231/">Nuweamanya Crispus</a> | WDD 231 Project</p>
+  </footer>
+</body>
+</html>

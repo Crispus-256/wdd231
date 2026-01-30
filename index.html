@@ -81,9 +81,31 @@
 
       <section id="student-photo">
         <h2>Student Photo</h2>
-        <img src="images/profile.png" alt="Nuweamanya Crispus" width="300" height="250">
+        <img src="images/profile.png" alt="Nuweamanya Crispus" class="hover-zoom" width="300" height="250">
       </section>
     </div>
+    <!-- Visual Demos: loading animation + hover image -->
+    <section id="demos">
+      <h2>Visual Demos</h2>
+      <div class="demo-row">
+        <div class="loader-demo" aria-hidden="true">
+          <div class="loading-dots" aria-hidden="true" aria-label="Loading dots"><span></span><span></span><span></span></div>
+
+          <!-- Spinner (uses animation) -->
+          <div id="loader" role="img" aria-label="Spinning loader"></div>
+
+          <!-- Transition-based loader (activates on hover) -->
+          <div class="loader-t" role="img" aria-label="Hover to animate loader" tabindex="0"></div>
+
+          <div style="margin-top:0.5rem; font-size:0.9rem; color:#555;">Loading… (examples: animated spinner, hover-activated loader, and loading dots)</div>
+        </div>
+
+        <div class="image-demo">
+          <h3>Hover Image</h3>
+          <img src="images/profile.png" alt="Hover demo" class="hover-zoom" width="200" height="160">
+        </div>
+      </div>
+    </section>
     <div class="courses">
       <section id="courses">
         <h2>Web Certificate Courses</h2>
@@ -120,6 +142,9 @@
       </a>
     </div>
   </main>
+
+  <!-- Modal Dialog -->
+  <dialog id="course-details"></dialog>
 
   <!-- Footer -->
   <footer>

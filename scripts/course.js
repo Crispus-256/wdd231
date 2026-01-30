@@ -8,46 +8,98 @@ const courses = [
   { name: "WDD231", credits: 2, completed: false },
 ];
 
-// Display Courses
-function displayCourses(filteredCourses) {
-  const courseList = document.getElementById('course-list');
-  courseList.innerHTML = '';
+// Cache DOM elements and validate
+const courseListEl = document.getElementById('course-list');
+const totalCreditsEl = document.getElementById('total-credits');
+const buttonsContainer = document.querySelector('.course-buttons');
+const detailsDialog = document.getElementById('course-details');
 
-  filteredCourses.forEach(course => {
-    const courseDiv = document.createElement('div');
-    courseDiv.textContent = `${course.name} (${course.credits} credits)`;
-    if (course.completed) {
-      courseDiv.style.fontWeight = 'bold';
-      courseDiv.style.color = 'green';
-    }
-    courseList.appendChild(courseDiv);
-  });
-
-  // Update Total Credits
-  const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-  document.getElementById('total-credits').textContent = totalCredits;
+if (!courseListEl || !totalCreditsEl || !buttonsContainer || !detailsDialog) {
+  console.error('Course UI elements not found. Scripts may be running before DOM is ready.');
 }
 
-// Filter Buttons
-document.getElementById('all-courses').addEventListener('click', () => displayCourses(courses));
+// Utility to split a course code into subject and number (e.g., 'WDD231' -> ['WDD', '231'])
+function splitCourseCode(code) {
+  const match = /^([A-Za-z]+)(\d+)$/.exec(code);
+  return match ? [match[1], match[2]] : [code, ''];
+}
 
-// Add event listeners for WDD courses
-document.querySelectorAll('.wdd-course').forEach(button => {
-  button.addEventListener('click', () => {
-    const courseName = button.dataset.course;
-    const filteredCourses = courses.filter(course => course.name === courseName);
-    displayCourses(filteredCourses);
+// Render a single course card
+function makeCourseCard(course) {
+  const div = document.createElement('div');
+  div.className = 'course-card';
+  div.setAttribute('data-course', course.name);
+
+  const [subject, number] = splitCourseCode(course.name);
+  div.innerHTML = `
+    <h3>${subject} ${number}</h3>
+    <p>${course.name} &middot; ${course.credits} credits</p>
+  `;
+
+  if (course.completed) {
+    div.style.fontWeight = 'bold';
+    div.style.color = 'green';
+  }
+
+  // click shows details for this course
+  div.addEventListener('click', () => displayCourseDetails(course));
+  return div;
+}
+
+// Display a list of courses and update total credits
+function displayCourses(filteredCourses) {
+  if (!courseListEl || !totalCreditsEl) return;
+
+  courseListEl.innerHTML = '';
+  filteredCourses.forEach(course => courseListEl.appendChild(makeCourseCard(course)));
+
+  const totalCredits = filteredCourses.reduce((sum, c) => sum + (Number(c.credits) || 0), 0);
+  totalCreditsEl.textContent = totalCredits;
+}
+
+// Event delegation for filter buttons
+if (buttonsContainer) {
+  buttonsContainer.addEventListener('click', (event) => {
+    const btn = event.target.closest('button');
+    if (!btn) return;
+
+    if (btn.id === 'all-courses') {
+      displayCourses(courses);
+      return;
+    }
+
+    const code = btn.dataset.course;
+    if (code) {
+      displayCourses(courses.filter(c => c.name === code));
+    }
   });
-});
+}
 
-// Add event listeners for CSE courses
-document.querySelectorAll('.cse-course').forEach(button => {
-  button.addEventListener('click', () => {
-    const courseName = button.dataset.course;
-    const filteredCourses = courses.filter(course => course.name === courseName);
-    displayCourses(filteredCourses);
+// Modal: close when clicking backdrop (added once)
+if (detailsDialog) {
+  detailsDialog.addEventListener('click', (event) => {
+    if (event.target === detailsDialog) detailsDialog.close();
   });
-});
+}
 
-// Initial Display
+// Show course details safely
+function displayCourseDetails(course) {
+  if (!detailsDialog) return;
+
+  const [subject, number] = splitCourseCode(course.name);
+  detailsDialog.innerHTML = `
+    <button id="closeModal" aria-label="Close">❌</button>
+    <h2>${subject} ${number}</h2>
+    <h3>${course.name}</h3>
+    <p><strong>Credits:</strong> ${course.credits}</p>
+    <p><strong>Status:</strong> ${course.completed ? 'Completed' : 'In progress'}</p>
+  `;
+
+  const closeBtn = detailsDialog.querySelector('#closeModal');
+  if (closeBtn) closeBtn.addEventListener('click', () => detailsDialog.close(), { once: true });
+
+  detailsDialog.showModal();
+}
+
+// Initial display
 displayCourses(courses);

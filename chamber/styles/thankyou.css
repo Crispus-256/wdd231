@@ -1,0 +1,88 @@
+/* Specific Styles for Thank You Page */
+main {
+  text-align: center;
+  padding: 2rem;
+}
+@media screen {
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #007BFF;
+    color: white;
+    }
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.logo img {
+    height: auto;
+    width: 100%;
+  }
+
+.navigation-links {
+    display: flex;
+    gap: 1rem;
+    color: white;
+  }
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #007BFF;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgb(35, 13, 227);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+}
+
+td {
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #0078d4;
+  color: white;
+  margin-top: 2rem;
+}
