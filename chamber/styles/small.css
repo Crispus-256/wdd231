@@ -88,11 +88,4 @@ footer {
   color: white;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
-
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  background-color: #f1f1f1;
-  margin-top: 2rem;
-}
 }
