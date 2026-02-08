@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welcome to the Nairobi Chamber of Commerce. Join us to support local businesses and grow the community.">
+  <meta name="description" content="Discover the Nairobi Chamber of Commerce and its benefits for local businesses.">
   <meta property="og:title" content="Nairobi Chamber of Commerce - Empowering Local Businesses">
-  <meta property="og:description" content="Join the Nairobi Chamber of Commerce to support local businesses and foster economic growth in the community.">
+  <meta property="og:description" content="Discover the benefits of joining the Nairobi Chamber of Commerce and how we support local businesses.">
   <meta property="og:image" content="https://crispus-256.github.io/wdd231/chamber/images/pexels-ivan-hero.jpg">
-  <meta property="og:url" content="https://crispus-256.github.io/wdd231/chamber/index.html">
-  <meta name="author" content="Crispus Nuweamanya">
+  <meta property="og:url" content="https://crispus-256.github.io/wdd231/chamber/discover.html">
+  <meta name="author" content="Nuweamanya Crispus">
   <title>Nairobi Chamber of Commerce</title>
   <link rel="icon" href="images/chamber_favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/home_script.js" defer></script>
+  <link rel="stylesheet" href="styles/discover.css">
+  <style>
+    body { font-display: swap; font-family: 'Roboto', sans-serif; }
+  </style>
+  <script src="scripts/discover.js" type="module" defer></script>
 </head>
 <body>
   <header>
@@ -34,37 +38,13 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="images/pexels-ivan-hero.jpg" alt="Nairobi Skyline" width="1200" height="600">
-      <div class="hero-content">
-        <h1>Welcome to the Nairobi Chamber of Commerce</h1>
-        <p>Empowering local businesses and fostering economic growth.</p>
-        <a href="join.html" class="cta-button">Join Us Today</a>
-      </div>
+    <section id="visitor-message" class="visitor-notice" role="status" aria-live="polite">
+      <p id="message"></p>
+      <button id="close-message" class="close-btn" aria-label="Close message">×</button>
     </section>
-
-    <!-- Current Events Section -->
-    <section class="events">
-      <h2>Upcoming Events</h2>
-      <ul>
-        <li><strong>Business Networking Event:</strong> October 15, 2026</li>
-        <li><strong>Annual Chamber Gala:</strong> November 20, 2026</li>
-      </ul>
-    </section>
-
-    <!-- Weather Section -->
-    <section class="weather">
-      <h2>Weather in Nairobi</h2>
-      <p id="current-temp"></p>
-      <p id="weather-desc"></p>
-      <div id="forecast"></div>
-    </section>
-
-    <!-- Company Spotlights Section -->
-    <section class="spotlights">
-      <h2>Featured Members</h2>
-      <div id="spotlight-cards"></div>
+    <section id="gallery">
+      <h1>Discover Our Area</h1>
+      <div class="grid-container" role="region" aria-label="Featured attractions"></div>
     </section>
   </main>
 
