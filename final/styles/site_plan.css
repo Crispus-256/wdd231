@@ -1,0 +1,108 @@
+/* Color Scheme Variables */
+:root {
+    --primary-color: #003366; /* Deep Navy */
+    --secondary-color: #FFD700; /* Golden Yellow */
+    --background-color: #FFFFFF; /* white */
+    --accent-color: #2E8B57; /* Sea Green */
+    --text-color: #333333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--accent-color);
+}
+
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* Color Palette Visuals */
+.palette {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.color-swatch {
+    flex: 1;
+    min-width: 150px;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Typography examples */
+.type-example-h { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; }
+.type-example-p { font-family: 'Arial', sans-serif; }
+
+/* Wireframe Placeholders */
+.wireframe-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.wireframe-box {
+    border: 2px dashed #ccc;
+    padding: 1rem;
+    background: #eee;
+    text-align: center;
+}
+
+.wireframe-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .wireframe-container { grid-template-columns: 1fr; }
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #777;
+
+}
