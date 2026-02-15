@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "David Okello",
+    "area": "Academic Excellence",
+    "bio": "Specializes in helping students balance sports and study.",
+    "image": "images/okello.webp",
+    "experience": "8 years"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Chen",
+    "area": "Mental Wellness",
+    "bio": "Focuses on mindfulness and stress management for teens.",
+    "image": "images/sarah.webp",
+    "experience": "5 years"
+  },
+  {
+    "id": 3,
+    "name": "James Kato",
+    "area": "Leadership Development",
+    "bio": "Empowers youth to take leadership roles in their communities.",
+    "image": "images/james.webp",
+    "experience": "6 years"
+  },
+  {
+    "id": 4,
+    "name": "Maria Njoroge",
+    "area": "Career Guidance",
+    "bio": "Helps students explore career paths and make informed decisions.",
+    "image": "images/maria.webp",
+    "experience": "7 years"
+  },
+  {
+    "id": 5,
+    "name": "Peter Wambua",
+    "area": "Spiritual Growth",
+    "bio": "Guides youth in strengthening their faith and values.",
+    "image": "images/peter.webp",
+    "experience": "9 years"
+  },
+  {
+    "id": 6,
+    "name": "Grace Mwai",
+    "area": "Life Skills",
+    "bio": "Teaches essential life skills such as communication and decision-making.",
+    "image": "images/grace.webp",
+    "experience": "4 years"
+  },
+  {
+    "id": 7,
+    "name": "John Kamau",
+    "area": "Entrepreneurship",
+    "bio": "Inspires youth to start their own businesses and innovate.",
+    "image": "images/john.webp",
+    "experience": "10 years"
+  },
+  {
+    "id": 8,
+    "name": "Lilian Otieno",
+    "area": "Art and Creativity",
+    "bio": "Encourages creative expression through art and music.",
+    "image": "images/lilian.webp",
+    "experience": "3 years"
+  },
+  {
+    "id": 9,
+    "name": "Michael Ochieng",
+    "area": "Sports Coaching",
+    "bio": "Trains youth in various sports disciplines while instilling discipline.",
+    "image": "images/michael.webp",
+    "experience": "5 years"
+  },
+  {
+    "id": 10,
+    "name": "Esther Wanjiku",
+    "area": "Financial Literacy",
+    "bio": "Educates youth on managing finances and saving for the future.",
+    "image": "images/esther.webp",
+    "experience": "6 years"
+  },
+  {
+    "id": 11,
+    "name": "Daniel Muthoni",
+    "area": "Community Service",
+    "bio": "Engages youth in volunteerism and community development projects.",
+    "image": "images/daniel.webp",
+    "experience": "4 years"
+  },
+  {
+    "id": 12,
+    "name": "Joyce Akinyi",
+    "area": "STEM Education",
+    "bio": "Promotes interest in science, technology, engineering, and math fields.",
+    "image": "images/joyce.webp",
+    "experience": "7 years"
+  },
+  {
+    "id": 13,
+    "name": "Brian Otieno",
+    "area": "Conflict Resolution",
+    "bio": "Teaches youth how to resolve conflicts peacefully and effectively.",
+    "image": "images/brian.webp",
+    "experience": "5 years"
+  },
+  {
+    "id": 14,
+    "name": "Caroline Wairimu",
+    "area": "Public Speaking",
+    "bio": "Helps youth develop confidence and skills in public speaking.",
+    "image": "images/caroline.webp",
+    "experience": "3 years"
+  },
+  {
+    "id": 15,
+    "name": "Samuel Kimani",
+    "area": "Environmental Awareness",
+    "bio": "Raises awareness about environmental issues and sustainable practices.",
+    "image": "images/samuel.webp",
+    "experience": "8 years"
+  }
+]

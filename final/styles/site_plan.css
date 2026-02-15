@@ -29,6 +29,9 @@ header h1 {
     color: var(--secondary-color);
 }
 
+/* Logo sizing for site plan page */
+.logo img { height: 48px; width: auto; display: block; margin: 0 auto 1rem auto; }
+
 main {
     max-width: 900px;
     margin: 2rem auto;
@@ -106,3 +109,24 @@ footer {
     color: #777;
 
 }
+
+/* Accessibility helpers */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+}
+
+/* Focus visible style */
+:focus-visible { outline: 3px solid var(--secondary-color); outline-offset: 2px; }

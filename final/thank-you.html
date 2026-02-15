@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | YouthMentor</title>
+    <meta name="description" content="Thank you for joining YouthMentor. We will be in touch soon!">
+    <meta name="author" content="Nuweamanya Crispus">
+    
+    <meta property="og:title" content="Thank You | YouthMentor">
+    <meta property="og:description" content="Thank you for joining YouthMentor. We will be in touch soon!">
+    <meta property="og:image" content="https://yourdomain.com/images/thank-you.png">
+    <meta property="og:url" content="https://yourdomain.com/thank-you.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Thank You | YouthMentor">
+    <meta name="twitter:description" content="Thank you for joining YouthMentor. We will be in touch soon!">
+    <meta name="twitter:image" content="https://yourdomain.com/images/thank-you.png">
+    <meta name="twitter:url" content="https://yourdomain.com/thank-you.html">
+
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <meta name="theme-color" content="#003366">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html" aria-label="Home"><img src="images/youth_mentor.webp" alt="YouthMentor logo" width="160" height="40" decoding="async"></a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="thank-you-container">
+        <section class="card">
+            <h1>Application Received!</h1>
+            <p>Thank you for reaching out. Here is the information we received:</p>
+            
+            <div id="results" class="form-results"></div>
+
+            <p>Our team will contact you within 3-5 business days.</p>
+            <a href="index.html" class="cta-button">Return Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 | YouthMentor | <a href="https://youtu.be/REPLACE_WITH_VIDEO_ID" target="_blank" rel="noopener">Video Demo</a></p>
+    </footer>
+
+    <script>
+        const resultsContainer = document.querySelector('#results');
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.has('fname')) {
+            resultsContainer.innerHTML = `
+                <p><strong>Name:</strong> ${urlParams.get('fname')}</p>
+                <p><strong>Email:</strong> ${urlParams.get('email')}</p>
+                <p><strong>Interest:</strong> ${urlParams.get('interest')}</p>
+                <p><strong>Submitted on:</strong> ${new Date().toLocaleDateString()}</p>
+            `;
+        } else {
+            resultsContainer.innerHTML = "<p>No data submitted.</p>";
+        }
+    </script>
+</body>
+</html>
