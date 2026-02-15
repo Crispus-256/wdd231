@@ -89,4 +89,3 @@ tr:hover{background:rgba(0,0,0,0.04)}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-

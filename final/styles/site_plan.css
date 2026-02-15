@@ -32,6 +32,14 @@ header h1 {
 /* Logo sizing for site plan page */
 .logo img { height: 48px; width: auto; display: block; margin: 0 auto 1rem auto; }
 
+/* Color swatches (moved from inline styles) */
+.swatch-primary { background-color: #003366; color: white; }
+.swatch-secondary { background-color: #FFD700; color: #333; text-shadow: none; }
+.swatch-accent { background-color: #2E8B57; color: white; }
+.swatch-background { background-color: white; color: #333; text-shadow: none; border: 1px solid #ddd; }
+
+.color-swatch { padding: 1rem; border-radius: 4px; min-width: 150px; text-align: center; font-weight: bold; }
+
 main {
     max-width: 900px;
     margin: 2rem auto;

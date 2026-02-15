@@ -58,13 +58,6 @@
     width: 24px;
     height: 24px;
   }
-
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
 }
 
 /* Modal Styling */
@@ -259,4 +252,11 @@ dialog button:hover {
     animation: none !important;
     transition: none !important;
   }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
