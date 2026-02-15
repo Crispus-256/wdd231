@@ -12,6 +12,34 @@ if (mentorContainer) {
     getMentors('data/mentors.json').then(data => {
         displayMentors(data, mentorContainer);
         
+        // Add a persistent toggle so users can re-enable/disable mentor detail modals
+        (function setupMentorModalToggle() {
+            if (!mentorContainer) return;
+            const wrapper = document.createElement('div');
+            wrapper.className = 'mentor-controls';
+            wrapper.innerHTML = `
+                <label class="mentor-toggle">
+                    <input id="mentor-modals-toggle" type="checkbox" aria-checked="true">
+                    <span>Show mentor details modals</span>
+                </label>
+            `;
+            mentorContainer.parentNode.insertBefore(wrapper, mentorContainer);
+
+            const toggle = wrapper.querySelector('#mentor-modals-toggle');
+            const suppressed = localStorage.getItem('suppressMentorModal') === 'true';
+            toggle.checked = !suppressed; // checked === modals enabled
+
+            toggle.addEventListener('change', (e) => {
+                const enabled = e.target.checked;
+                if (enabled) localStorage.removeItem('suppressMentorModal');
+                else localStorage.setItem('suppressMentorModal', 'true');
+
+                // keep modal's internal suppress checkbox in sync if dialog is present
+                const suppressCheckbox = document.querySelector('#suppress-modal');
+                if (suppressCheckbox) suppressCheckbox.checked = !enabled;
+            });
+        })();
+
         // Modal Logic (accessible)
         const modal = document.querySelector('#mentor-details');
         const modalContent = document.querySelector('#modal-content');
@@ -94,6 +122,41 @@ if (mentorContainer) {
                 if (mentor) openModalFor(mentor);
             });
         });
+
+        // Image preview (click mentor image to see larger)
+        const imgPreview = document.querySelector('#image-preview');
+        const previewImg = document.querySelector('#preview-img');
+        const previewCaption = document.querySelector('#preview-caption');
+        const closePreviewBtn = document.querySelector('#close-preview');
+
+        function openImagePreview(mentor) {
+            // always show image preview regardless of suppress setting
+            lastFocusedElement = document.activeElement;
+            previewImg.src = mentor.image;
+            previewImg.alt = mentor.name;
+            previewCaption.textContent = `${mentor.name} — ${mentor.area}`;
+            imgPreview.setAttribute('aria-hidden', 'false');
+            imgPreview.showModal();
+            const removeTrap = trapFocus(imgPreview);
+            imgPreview.addEventListener('close', () => {
+                removeTrap();
+                imgPreview.setAttribute('aria-hidden', 'true');
+                if (lastFocusedElement) lastFocusedElement.focus();
+            }, { once: true });
+        }
+
+        document.querySelectorAll('.zoom-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const mentor = data.find(m => m.id == btn.dataset.id);
+                if (mentor) openImagePreview(mentor);
+            });
+        });
+
+        if (closePreviewBtn) closePreviewBtn.addEventListener('click', () => imgPreview.close());
+        if (imgPreview) {
+            imgPreview.addEventListener('click', (e) => { if (e.target === imgPreview) imgPreview.close(); });
+            imgPreview.addEventListener('keydown', (e) => { if (e.key === 'Escape') imgPreview.close(); });
+        }
 
         // Close button
         if (closeBtn) closeBtn.addEventListener('click', closeModal);

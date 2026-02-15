@@ -138,6 +138,39 @@ header {
     display: block;
 }
 
+/* Mentor controls (enable/disable mentor-detail modals) */
+.mentor-controls {
+    max-width: 1100px;
+    margin: 0.75rem auto 0.5rem;
+    padding: 0 1rem;
+    text-align: right;
+}
+.mentor-toggle {
+    font-size: 0.95rem;
+    color: var(--navy);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.mentor-toggle input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+/* Zoomable mentor image */
+.zoom-btn { border: none; padding: 0; background: transparent; cursor: zoom-in; display: block; width: 100%; }
+.zoom-btn img { display: block; width: 100%; height: auto; border-radius: 2px; }
+
+/* Image preview/lightbox */
+#image-preview { border: none; padding: 0; max-width: 92vw; max-height: 92vh; border-radius: 8px; overflow: hidden; }
+#image-preview::backdrop { background: rgba(0,0,0,0.6); }
+#image-preview .preview-content { position: relative; background: #fff; display: flex; flex-direction: column; align-items: stretch; }
+#image-preview img { width: 100%; height: auto; max-height: calc(92vh - 64px); object-fit: contain; display: block; background: #000; }
+#image-preview .caption { padding: 10px 14px; font-size: 0.95rem; color: var(--navy); text-align: center; }
+#close-preview { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.9); border: none; border-radius: 18px; padding: 6px 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+#close-preview:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 480px) { #image-preview { max-width: 98vw; } }
+
 /* Accessibility: visible focus states */
 :focus-visible {
     outline: 3px solid var(--gold);

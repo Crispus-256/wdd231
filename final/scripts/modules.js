@@ -14,7 +14,9 @@ export function displayMentors(mentors, container) {
         const card = document.createElement("section");
         card.className = "card";
         card.innerHTML = `
-            <img src="${mentor.image}" alt="${mentor.name}" loading="lazy">
+            <button class="zoom-btn" data-id="${mentor.id}" aria-haspopup="dialog" aria-controls="image-preview" aria-label="View larger image of ${mentor.name}">
+                <img src="${mentor.image}" alt="${mentor.name}" loading="lazy">
+            </button>
             <h3>${mentor.name}</h3>
             <p><strong>Area:</strong> ${mentor.area}</p>
             <p><strong>Experience:</strong> ${mentor.experience}</p>
