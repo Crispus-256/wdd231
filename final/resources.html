@@ -25,7 +25,9 @@
     <meta name="theme-color" content="#003366">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/site_plan.css">
     <script src="scripts/main.js" type="module"></script>
 </head>
 <body>
@@ -41,10 +43,10 @@
         </nav>
     </header>
     <main>
-        <h2>Our Mentors</h2>
-        <div id="mentor-container" class="grid-container"></div>
+        <h1 id="mentors-title">Our Mentors</h1>
+        <div id="mentor-container" class="grid-container" aria-labelledby="mentors-title"></div>
 
-        <dialog id="mentor-details">
+        <dialog id="mentor-details" aria-hidden="true">
             <div id="modal-content"></div>
             <button id="close-modal">Close</button>
         </dialog>

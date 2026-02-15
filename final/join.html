@@ -20,12 +20,14 @@
     <meta name="twitter:image" content="https://crispus-256.github.io/wdd231/final/images/youth_mentor.webp">
     <meta name="twitter:url" content="https://crispus-256.github.io/wdd231/final/join.html">
 
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="images/favicon.svg">
     <meta name="theme-color" content="#003366">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/site_plan.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="images/favicon.svg">
     <script src="scripts/main.js" type="module"></script>
 </head>
 <body>
@@ -41,16 +43,23 @@
         </nav>
     </header>
     <main>
-        <form action="thank-you.html" method="get" class="mentor-form">
-            <label>Full Name: <input type="text" name="fname" required></label>
-            <label>Email: <input type="email" name="email" required></label>
-            <label>Interests: 
-                <select name="interest">
-                    <option value="mentee">Seeking a Mentor</option>
-                    <option value="volunteer">Volunteer</option>
-                </select>
-            </label>
-            <input type="submit" value="Submit Application">
+        <h1 id="join-h1">Join YouthMentor</h1>
+        <form action="thank-you.html" method="get" class="mentor-form" aria-labelledby="join-h1" aria-describedby="join-instructions">
+            <p id="join-instructions" class="sr-only">Fill out this short application to request a mentor or volunteer as a mentor.</p>
+
+            <label for="fname">Full Name</label>
+            <input id="fname" type="text" name="fname" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+
+            <label for="interest">Interest</label>
+            <select id="interest" name="interest">
+                <option value="mentee">Seeking a Mentor</option>
+                <option value="volunteer">Volunteer</option>
+            </select>
+
+            <input type="submit" value="Submit Application" class="cta-button">
         </form>
     </main>
     <footer>

@@ -114,3 +114,110 @@ if (location.pathname.includes("index.html")) {
     }
     localStorage.setItem('lastVisit', new Date().toLocaleDateString());
 }
+
+/* --------------------------------------------------------------------------
+   Join page — autosave draft to localStorage, restore, clear and simple validation
+   - Saves form inputs to 'joinFormDraft'
+   - Restores on page load if present
+   - Adds an accessible status message and a "Clear draft" button
+   - Removes draft on successful submit
+   -------------------------------------------------------------------------- */
+const joinForm = document.querySelector('.mentor-form');
+if (joinForm) {
+    const fname = joinForm.querySelector('input[name="fname"]');
+    const email = joinForm.querySelector('input[name="email"]');
+    const interest = joinForm.querySelector('select[name="interest"]');
+    const DRAFT_KEY = 'joinFormDraft';
+
+    // create status element (aria-live) so SR users are notified of restore/clear actions
+    let draftNote = document.querySelector('#draft-note');
+    if (!draftNote) {
+        draftNote = document.createElement('p');
+        draftNote.id = 'draft-note';
+        draftNote.className = 'sr-only';
+        draftNote.setAttribute('role', 'status');
+        draftNote.setAttribute('aria-live', 'polite');
+        joinForm.insertAdjacentElement('beforebegin', draftNote);
+    }
+
+    function showDraftMessage(text, visible = false) {
+        draftNote.textContent = text;
+        if (visible) {
+            draftNote.classList.remove('sr-only');
+            setTimeout(() => draftNote.classList.add('sr-only'), 2500);
+        }
+    }
+
+    // restore draft if present
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (raw) {
+        try {
+            const saved = JSON.parse(raw);
+            if (saved.fname) fname.value = saved.fname;
+            if (saved.email) email.value = saved.email;
+            if (saved.interest) interest.value = saved.interest;
+            showDraftMessage('Restored saved application draft', true);
+        } catch (err) {
+            console.warn('corrupt draft removed', err);
+            localStorage.removeItem(DRAFT_KEY);
+        }
+    }
+
+    // debounce helper to reduce write frequency
+    function debounce(fn, wait = 250) {
+        let t;
+        return (...args) => {
+            clearTimeout(t);
+            t = setTimeout(() => fn.apply(this, args), wait);
+        };
+    }
+
+    // save draft
+    const saveDraft = debounce(() => {
+        const payload = {
+            fname: fname.value.trim(),
+            email: email.value.trim(),
+            interest: interest.value,
+            savedAt: new Date().toISOString()
+        };
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(payload));
+        showDraftMessage('Draft saved');
+    }, 300);
+
+    fname.addEventListener('input', saveDraft);
+    email.addEventListener('input', saveDraft);
+    interest.addEventListener('change', saveDraft);
+
+    // add Clear draft button (in DOM) — non-destructive to HTML source so user can still edit file
+    if (!document.querySelector('#clear-draft')) {
+        const clearBtn = document.createElement('button');
+        clearBtn.type = 'button';
+        clearBtn.id = 'clear-draft';
+        clearBtn.className = 'cta-button';
+        clearBtn.textContent = 'Clear draft';
+        // place after submit button if present, otherwise append to form
+        const submit = joinForm.querySelector('input[type="submit"]');
+        if (submit && submit.parentNode) submit.parentNode.appendChild(clearBtn);
+        else joinForm.appendChild(clearBtn);
+
+        clearBtn.addEventListener('click', () => {
+            localStorage.removeItem(DRAFT_KEY);
+            fname.value = '';
+            email.value = '';
+            interest.value = 'mentee';
+            showDraftMessage('Draft cleared', true);
+        });
+    }
+
+    // remove draft on submit (allow normal navigation to thank-you page)
+    joinForm.addEventListener('submit', () => {
+        localStorage.removeItem(DRAFT_KEY);
+    });
+
+    // basic, friendly validation for full name (short message shown via Constraint API)
+    fname.addEventListener('input', () => {
+        const ok = fname.value.trim().length >= 2;
+        fname.setCustomValidity(ok ? '' : 'Please enter your full name');
+    });
+
+}
