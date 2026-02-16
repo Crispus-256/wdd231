@@ -85,6 +85,7 @@ header {
 .hero img {
     width: 100%;
     height: auto;
+    margin-top: 0;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
@@ -130,17 +131,52 @@ header {
 }
 
 @media (min-width: 768px) {
+    /* Desktop: make hero a banner with background image and centered overlay */
     .hero {
-        grid-template-columns: 1fr 1fr;
-        padding: 3rem 2rem;
+        grid-template-columns: 1fr;
+        padding: 0;
+        max-width: none;
+        width: 100vw;
+        margin-top: 0;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-radius: 0;
+        background-image: url('../images/mentor_hero.webp');
+        background-size: cover;
+        background-position: center;
+        min-height: 62vh;
+        display: block;
+        position: relative;
+        box-shadow: none;
+        overflow: hidden;
     }
-    .hero img {
-        order: 1;
-    }
+
+    /* Hide inline img to avoid duplicate visuals on desktop */
+    .hero img { display: none; }
+
+    /* Overlay content centered vertically and horizontally */
     .hero-content {
-        order: 0;
-        text-align: left;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 51, 102, 0.75);
+        color: #fff;
+        padding: 2rem 2.5rem;
+        border-radius: 10px;
+        max-width: 720px;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.35);
     }
+
+    .hero h1 { color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+    .hero h2 { color: #ffd700; }
+    .hero p { color: rgba(255,255,255,0.95); }
+
+    .hero .cta-button { margin-top: 1rem; display: inline-block; }
+
+    /* ensure page content below hero has spacing */
+    .features { margin-top: 2.25rem; }
 }
 
 @media (max-width: 480px) {
@@ -317,6 +353,58 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
+}
+
+/* Mobile refinements */
+@media (max-width: 480px) {
+    /* Header compact */
+    header { padding: 0.5rem 0.75rem; }
+    .logo img { height: 32px; }
+    #menu-button { font-size: 1.35rem; }
+
+    /* Nav overlay for small screens */
+    #nav-menu.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        z-index: 1200;
+    }
+    #nav-menu.open ul { list-style: none; padding: 0; margin: 0; }
+    #nav-menu.open a { font-size: 1.25rem; }
+
+    /* Hero adjustments: image tall and cropped, content overlays image */
+    .hero { padding: 0.5rem; border-radius: 6px; }
+    .hero img { max-height: 320px; object-fit: cover; border-radius: 6px; }
+    .hero-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,51,102,0.72);
+        color: white;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        width: calc(100% - 2rem);
+    }
+    .hero h1, .hero h2, .hero p { color: #fff; }
+    .hero h1 { font-size: 1.4rem; }
+    .hero h2 { font-size: 1rem; color: #ffd700; }
+    .hero .cta-button { display: block; width: 100%; text-align: center; padding: 12px; }
+
+    /* Feature cards tighter spacing */
+    .features { margin: 1rem auto; padding: 0 0.75rem; }
+    .feature-card { padding: 1rem; border-left-width: 3px; }
+    .feature-card img { height: 180px; }
+
+    /* Last-visit and form spacing */
+    #last-visit, .mentor-form, .form-results { margin: 1rem; padding: 1rem; }
 }
 
 /* Desktop View */
