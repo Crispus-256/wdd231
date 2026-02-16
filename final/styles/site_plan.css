@@ -1,34 +1,4 @@
-/* Site-plan specific styles — avoid redefining global selectors (use main.css for base rules) */
-
-:root {
-    --navy: #003366;
-    --gold: #FFD700;
-    --green: #2E8B57;
-    --white: #ffffff;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    color: var(--navy);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f0f8ff 0%, #f5f5f0 50%, #f0fff0 100%);
-    background-attachment: fixed;
-}
-
-main {
-    flex: 1;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    width: 100%;
-}
+/* Site-plan specific styles — uses global base rules from styles/main.css */
 
 /* Header styling for site-plan */
 header.site-plan {
@@ -238,18 +208,7 @@ footer.site-plan strong {
     }
 }
 
-/* Accessibility */
-.sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-}
+/* Accessibility helpers (see main.css for global .sr-only) */
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
