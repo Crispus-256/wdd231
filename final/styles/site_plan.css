@@ -1,47 +1,98 @@
 /* Site-plan specific styles — avoid redefining global selectors (use main.css for base rules) */
 
-/* Logo sizing for site-plan page (scoped) */
-header.site-plan .logo img { height: 48px; width: auto; display: block; margin: 0 auto 1rem auto; }
+:root {
+    --navy: #003366;
+    --gold: #FFD700;
+    --green: #2E8B57;
+    --white: #ffffff;
+}
 
-/* Color swatches (moved from inline styles) */
-.swatch-primary { background-color: #003366; color: white; }
-.swatch-secondary { background-color: #FFD700; color: #333; text-shadow: none; }
-.swatch-accent { background-color: #2E8B57; color: white; }
-.swatch-background { background-color: white; color: #333; text-shadow: none; border: 1px solid #ddd; }
+html, body {
+    height: 100%;
+}
 
-/* Consolidated color-swatch rules */
-.color-swatch { 
-    flex: 1;
-    min-width: 150px;
-    padding: 1rem;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: var(--navy);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f8ff 0%, #f5f5f0 50%, #f0fff0 100%);
+    background-attachment: fixed;
 }
 
 main {
+    flex: 1;
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
+    width: 100%;
 }
 
+/* Header styling for site-plan */
+header.site-plan {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header.site-plan h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header.site-plan p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+}
+
+/* Logo sizing for site-plan page (scoped) */
+header.site-plan .logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+/* Section styling */
 section {
     background: white;
     padding: 2rem;
     margin-bottom: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 5px solid var(--green);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+    border-top: 5px solid var(--gold);
+    border-left: 2px solid var(--green);
 }
 
-h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+h2 {
+    font-family: 'Montserrat', 'Arial', sans-serif;
     color: var(--navy);
-    border-bottom: 2px solid var(--gold);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    border-bottom: 3px solid var(--gold);
     display: inline-block;
-    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    color: var(--navy);
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0.75rem 0;
+}
+
+strong {
+    color: var(--navy);
+    font-weight: 700;
 }
 
 /* Color Palette Visuals */
@@ -49,46 +100,162 @@ h2, h3 {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Color swatches */
+.color-swatch {
+    flex: 1;
+    min-width: 150px;
+    padding: 1.5rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.color-swatch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.swatch-primary {
+    background-color: #003366;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.swatch-secondary {
+    background-color: #FFD700;
+    color: var(--navy);
+}
+
+.swatch-accent {
+    background-color: #2E8B57;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.swatch-background {
+    background-color: white;
+    color: var(--navy);
+    border: 2px solid #ddd;
 }
 
 /* Typography examples */
-.type-example-h { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; }
-.type-example-p { font-family: 'Arial', sans-serif; }
+.type-example-h {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 1rem 0;
+}
+
+.type-example-p {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-size: 1rem;
+    color: var(--navy);
+}
 
 /* Wireframe Placeholders */
 .wireframe-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .wireframe-box {
-    border: 2px dashed #ccc;
-    padding: 1rem;
-    background: #eee;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.wireframe-box:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.wireframe-box h3 {
+    color: var(--gold);
+    margin-top: 0;
 }
 
 .wireframe-box img {
     max-width: 100%;
     height: auto;
+    border-radius: 4px;
+    margin-top: 1rem;
 }
 
-@media (max-width: 600px) {
-    .wireframe-container { grid-template-columns: 1fr; }
-}
-
+/* Footer styling for site-plan */
 footer.site-plan {
+    background: var(--navy);
+    color: var(--white);
     text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    color: #777;
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+footer.site-plan p {
+    margin: 0;
+    color: var(--white);
+}
+
+footer.site-plan strong {
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .wireframe-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .palette {
+        flex-direction: column;
+    }
+    
+    .color-swatch {
+        min-width: 100%;
+    }
+    
+    header.site-plan {
+        padding: 1.5rem 1rem;
+    }
+    
+    section {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; }
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 

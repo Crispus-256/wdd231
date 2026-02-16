@@ -5,10 +5,23 @@
     --white: #ffffff;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     color: var(--navy);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f8ff 0%, #f5f5f0 50%, #f0fff0 100%);
+    background-attachment: fixed;
+}
+
+main {
+    flex: 1;
 }
 
 header {
@@ -54,48 +67,146 @@ header {
     .logo img { height: 34px; }
 }
 
-/* Hero background and layout */
+/* Hero section with image and content */
 .hero {
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url('../images/mentor_hero.webp');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    min-height: 60vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
-    justify-content: center;
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.hero-content {
     text-align: center;
-    padding: 4rem 1rem;
-    flex-direction: column;
 }
 
 .hero h1 {
-    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 2.8rem);
     margin: 0 0 0.5rem 0;
-    line-height: 1.05;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    line-height: 1.1;
+    color: var(--navy);
+}
+
+.hero h2 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    margin: 0 0 1rem 0;
+    color: var(--gold);
+    font-weight: 700;
 }
 
 .hero p {
-    font-size: clamp(1rem, 2.2vw, 1.25rem);
-    margin: 0 0 1rem 0;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    margin: 0 0 1.5rem 0;
+    color: var(--navy);
+    line-height: 1.5;
 }
 
 .hero .cta-button {
     background-color: var(--gold);
     color: var(--navy);
-    padding: 12px 22px;
+    padding: 12px 24px;
     border-radius: 6px;
     font-weight: 700;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    border: 2px solid var(--gold);
     transition: background-color 0.3s, color 0.3s;
 }
 
+.hero .cta-button:hover {
+    background-color: var(--navy);
+    color: var(--gold);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem 2rem;
+    }
+    .hero img {
+        order: 1;
+    }
+    .hero-content {
+        order: 0;
+        text-align: left;
+    }
+}
+
 @media (max-width: 480px) {
-    .hero { padding: 3rem 1rem; min-height: 50vh; }
+    .hero { padding: 1.5rem 1rem; gap: 1.5rem; }
     .hero h1 { font-size: 1.6rem; }
+}
+
+/* Features section with cards (image left/top, text right/bottom) */
+.features {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--gold);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    aspect-ratio: 1;
+}
+
+.feature-content h3 {
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin: 0 0 1rem 0;
+}
+
+.feature-content p {
+    color: var(--navy);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile: stack cards vertically with image on top */
+@media (max-width: 768px) {
+    .feature-card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .feature-card img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+    }
 }
 
 #nav-menu {
@@ -113,20 +224,25 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
-    border: 1px solid #ddd;
+    background: white;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 51, 102, 0.08);
 }
 
 .card:hover {
     transform: scale(1.05);
     border-color: var(--gold);
+    box-shadow: 0 6px 16px rgba(0, 51, 102, 0.15);
 }
 
 .card img {
@@ -224,9 +340,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     max-width: 500px;
     margin: 2rem auto;
     padding: 2rem;
-    background: #f9f9f9;
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
 }
 
 .mentor-form label {
@@ -247,8 +364,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .cta-button, .mentor-form input[type="submit"] {
-    background-color: var(--green);
-    color: white;
+    background-color: var(--gold);
+    color: var(--navy);
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -256,18 +373,36 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     text-decoration: none;
     display: inline-block;
     font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-button:hover, .mentor-form input[type="submit"]:hover {
     background-color: var(--navy);
+    color: var(--gold);
 }
 
 .form-results {
     text-align: left;
-    background: #eee;
-    padding: 1rem;
+    background: white;
+    color: var(--navy);
+    padding: 1.5rem;
     border-left: 5px solid var(--gold);
-    margin: 1rem 0;
+    margin: 1rem auto;
+    max-width: 600px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 51, 102, 0.08);
+}
+
+/* Last visit section */
+#last-visit {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
 }
 
 footer {
@@ -275,5 +410,5 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
+    margin-top: auto;
 }
